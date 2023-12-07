@@ -151,7 +151,7 @@ int main()
     traverse(head);
 
     sortLL(head);
-    cout<<"The sorted linked list is"<<endl;
+    cout<<endl<<"The sorted linked list is"<<endl;
     traverse(head);
     return 0;
 }
