@@ -1,4 +1,6 @@
 #include<iostream>
+#include<vector>
+#include <algorithm>
 using namespace std;
 
 class node{
@@ -86,6 +88,35 @@ void deletePosition(node* &head, int position){
     delete curr;
 }  
 
+//Part D-- SOrt
+void sortLL(node*&head){
+    //size of linked list
+    int n=0;
+    node*temp=head;
+    while(temp!=NULL){
+        temp=temp->next;
+        n++;
+    }
+
+    //copy data of linkedlist in an array
+    vector<int> arr(n);
+    int i=0;
+    temp=head;
+    while(temp!=NULL){
+        arr[i++]=temp->data;
+        temp=temp->next;
+    }
+
+    sort(arr.begin(),arr.end());
+    // copy data back to linked list
+    i=0;
+    temp=head;
+    while(temp!=NULL){
+        temp->data=arr[i++];
+        temp=temp->next;
+    }
+}
+
 //Part E
 node* reverse(node*&head){
     if(head==NULL)
@@ -117,6 +148,10 @@ int main()
     cout<<endl<<"After deleting the node"<<endl;
     traverse(head);
     head=reverse(head);
+    traverse(head);
+
+    sortLL(head);
+    cout<<"The sorted linked list is"<<endl;
     traverse(head);
     return 0;
 }
