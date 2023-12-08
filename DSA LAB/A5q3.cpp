@@ -1,20 +1,24 @@
 #include<iostream>
 using namespace std;
 
-// Create C++ programming  for  circular single linked list 
+// Create C++ programming  for  circular double linked list for the following 
 
 class node{
     public:
     int data;
     node*next;
+    node*prev;
+
     node(int data){
         this->data=data;
         next=NULL;
+        prev=NULL;
     }
 };
 
-class singleCircularList{
+class doublyCircularList{
     public:
+
     //check list is empty or not
     bool isEmpty(node*head){
         if(head==NULL){
@@ -56,6 +60,7 @@ class singleCircularList{
         if(head==NULL){
             head=temp;
             head->next=head;
+            head->prev=head;
             return;
         }
 
@@ -64,7 +69,9 @@ class singleCircularList{
             curr=curr->next;
         }
         temp->next=head;
+        head->prev=temp;
         curr->next=temp;
+        temp->prev=curr;
         head=temp;
     }
 
@@ -86,14 +93,16 @@ class singleCircularList{
         // more than 1 nodes are present
             node*temp=curr->next;
             curr->next=head;
+            head->prev=curr;
             delete temp;
     }
+
 
 };
 int main()
 {
     node*head=NULL;
-    singleCircularList l1;
+    doublyCircularList l1;
     l1.insertAtstart(head,6);
     l1.insertAtstart(head,7);
     l1.insertAtstart(head,10);
@@ -105,5 +114,8 @@ int main()
 
     l1.deleteAtEnd(head);
     l1.traverse(head);
+
+    cout<<endl<<"Linked list empty or not "<<l1.isEmpty(head)<<endl;
+    
     return 0;
 }
