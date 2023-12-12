@@ -1,8 +1,5 @@
 #include<iostream>
 using namespace std;
-
-//D. Write C++ code for a function that reverses the elements in an array without using any additional data structure.
-
 // Swap function two swap two elements in an array
 void swap(int &a, int &b){
     int temp=a;

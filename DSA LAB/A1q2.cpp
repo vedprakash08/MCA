@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-/* B. write code C++ to Implement a function to rotate an array of integers by a specified number of positions. For example, rotate [1, 2, 3, 4, 5] by 2 positions to get [4, 5, 1, 2, 3]. */
+
 int main()
 {
     int arr[5]={1,2,3,4,5};

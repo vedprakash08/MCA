@@ -1,8 +1,5 @@
 #include<iostream>
 using namespace std;
-//C. write C++ program to find the union of two arrays, returning all unique elements. 
-
-
 // Quick sort for sorting an array
 
 //----------->>> Using Quick Sort to sort an array to find the intersection

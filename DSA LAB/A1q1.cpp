@@ -1,8 +1,5 @@
 #include<iostream>
 using namespace std;
-
-/**A. Write a C++ program that finds the intersection of two arrays, returning an array containing elements common to both input arrays.**/
-
 //----------->>> Using Quick Sort to sort an array to find the intersection
 // Partition function 
 int partition(int arr[], int s, int e){
