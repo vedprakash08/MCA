@@ -5,28 +5,25 @@ using namespace std;
 
 int main()
 {
-    // string name;
-    // ofstream obj("sample.txt");
-    // cout<<"Enter your name "<<endl;
-    // getline(cin, name);
-    // obj<<"My name is " +name;
+    ifstream x("testing.txt");
 
+    string ci;
+    //getline(cin,ci);
+    int count = 0;
 
-    // obj.close();
-
-    // ifstream oin("sample.txt"); ->opening file using contructor
-    ifstream oin;
-    oin.open("sample.txt");
-    string st;
-    // to read multiple line we eof->end of file
-    // while(oin.eof()==0){
-    //     string st;
-    //     getline(oin,st);
-    //     cout<<st<<endl;;
-    // }
+    while(x.eof()==0){
+while(getline(x,ci,' ')){
+        count++;
+        
+    }
+    }
     
-    getline(oin,st,'n');
-    cout<<st;
-
+    cout << count;
+    
+    x.close();
+    // ifstream obj("testing.txt");
+    // string s;
+    // getline(obj,s);
+    // cout<<s;
     return 0;
 }
