@@ -11,17 +11,22 @@ int main()
     // getline(cin, name);
     // obj<<"My name is " +name;
 
+
     // obj.close();
 
     // ifstream oin("sample.txt"); ->opening file using contructor
     ifstream oin;
     oin.open("sample.txt");
+    string st;
     // to read multiple line we eof->end of file
-    while(oin.eof()==0){
-        string st;
-        getline(oin,st);
-        cout<<st<<endl;;
-    }
+    // while(oin.eof()==0){
+    //     string st;
+    //     getline(oin,st);
+    //     cout<<st<<endl;;
+    // }
     
+    getline(oin,st,'n');
+    cout<<st;
+
     return 0;
 }
