@@ -2,7 +2,8 @@
 #include <unordered_map>
 using namespace std;
 
-class store {
+class store
+{
 public:
     int code;
     int price;
@@ -11,7 +12,7 @@ public:
 public:
     store() {}
 
-    store(int c, int p): code(c),price(p){}
+    store(int c, int p) : code(c), price(p) {}
 
     void insertItem();
 
@@ -20,55 +21,67 @@ public:
     int totalPrice();
 };
 
-void store::insertItem() {
+void store::insertItem()
+{
     bool isContinue = true;
     string str;
     int code, price;
 
-    while (isContinue) {
+    while (isContinue)
+    {
         cout << "want to add item (yes / no): ";
         cin >> str;
-        if (str == "yes") {
+        if (str == "yes")
+        {
             cout << "Enter the code of the purchased item: ";
             cin >> code;
             cout << "Enter the price of the purchased item: ";
             cin >> price;
-            item[code] = price;  
-        } 
-        else {
+            item[code] = price;
+        }
+        else
+        {
             isContinue = false;
         }
     }
 }
 
-void store::deleteItem() {
+void store::deleteItem()
+{
     bool isContinue = true;
     int code;
     string str;
 
-    while (isContinue) {
+    while (isContinue)
+    {
         cout << "want to delete item (yes / no): ";
         cin >> str;
-        if (str == "yes") {
+        if (str == "yes")
+        {
             cout << "Enter the code of the purchased item: ";
             cin >> code;
             item.erase(code);
-        } else {
+        }
+        else
+        {
             isContinue = false;
         }
     }
 }
 
-int store::totalPrice() {
+int store::totalPrice()
+{
     int totalSum = 0;
-    for (auto i: item) {
+    for (auto i : item)
+    {
         totalSum += i.second;
     }
 
     return totalSum;
 }
 
-int main() {
+int main()
+{
     store item1;
     item1.insertItem();
     item1.deleteItem();
